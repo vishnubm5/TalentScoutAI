@@ -1,31 +1,29 @@
-TalentScout — AI Hiring Assistant
-
+##TalentScout — AI Hiring Assistant##
 Streamlit · LLM-based resume parser · Interview question generator
 
-A lightweight Hiring Assistant that performs initial technical screening by parsing a candidate's resume (PDF) and generating 10 tailored interview questions based on the candidate's declared tech stack. Built for local deployment with an easy Streamlit UI and modular code for prompt engineering experiments.
+A lightweight hiring assistant that performs an initial technical screen by parsing a candidate’s resume (PDF) and generating 10 tailored interview questions based on the candidate’s declared tech stack. Built for local use with a simple Streamlit UI and modular code for prompt-engineering experiments.
 
-Demo
+🚀 Demo (what it does)
+Upload a text-based PDF resume.
 
-Upload a text-based PDF resume and the app will parse skills/projects and generate 10 human-style technical interview questions.
+The app extracts skills/projects (heuristic + LLM fallback) and generates 10 realistic, human-style technical questions that reference the candidate’s listed technologies and projects.
 
-UI: Streamlit (single-page), Q&A flow with session-state tracking.
+Q&A flow runs in a single-page Streamlit UI and stores answers in session state for the demo.
 
-Note: This repository uses a local LLM client (e.g., Ollama) by default. Substitute your preferred LLM client or API as needed.
+Note: This repo uses a local LLM client (e.g., Ollama) by default. Swap in your preferred LLM provider or SDK as needed.
 
-Features
+✨ Features
+PDF text extraction using PyPDF2 with conservative heuristics for SKILLS and PROJECTS sections.
 
-Resume text extraction (PyPDF2) with conservative heuristics for SKILLS and PROJECTS sections.
+LLM fallback parser that returns a strict JSON object: skills, education, projects, experience_years when heuristics are insufficient.
 
-LLM fallback parser that returns a strict JSON (skills, education, projects, experience_years) when heuristics fail.
+LLM-driven question generator that produces 10 targeted interview questions referencing actual skills/projects found in the resume.
 
-LLM-based question generator that outputs 10 realistic interview questions referencing actual skills or projects found in the resume.
+Streamlit UI for resume upload, sequential question presentation, and inline answer collection.
 
-Streamlit UI for resume upload, question presentation, and answer collection.
+Simple context handler to detect conversation-ending keywords and exit gracefully.
 
-Simple context handler to exit gracefully when conversation-ending keywords are detected.
-
-Tech Stack
-
+🧰 Tech stack
 Python 3.9+
 
 Streamlit
