@@ -1,4 +1,4 @@
-#TalentScout — AI Hiring Assistant
+# TalentScout — AI Hiring Assistant
 Streamlit · LLM-based resume parser · Interview question generator
 
 A lightweight hiring assistant that performs an initial technical screen by parsing a candidate’s resume (PDF) and generating 10 tailored interview questions based on the candidate’s declared tech stack. Built for local use with a simple Streamlit UI and modular code for prompt-engineering experiments.
